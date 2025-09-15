@@ -1,3 +1,8 @@
+.headerParentWrapper {
+  width: 100%;
+  z-index: 999;
+}
+
 .toolTip {
   height: 30px;
   background-color: var(--color-success);
@@ -6,8 +11,13 @@
 }
 
 .header {
+  position: sticky;
+  top: 0;
   background: var(--color-white);
+  padding: 10px 0;
+  z-index: 999;
 }
+
 
 .headerContainer {
   display: flex;
@@ -29,7 +39,6 @@
 .logoText {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
 }
 
 .nav {
@@ -39,7 +48,7 @@
 
 .navLink {
   font-size: 1rem;
-  color: var(--color-text-green);
+  color: var(--color-green);
   text-decoration: none;
   font-family: var(--font-poppins);
   font-weight: 400;
@@ -47,20 +56,91 @@
 }
 
 .navLink:hover {
-  color: var(--color-text-green);
+  color: var(--color-green);
 }
 
 .ctaBtn {
-  background-color: var(--color-text-green);
+  background-color: var(--color-green);
   color: var(--color-white);
   font-family: var(--font-poppins);
   padding: 10px 20px;
   border-radius: 6px;
   font-weight: 400;
   text-decoration: none;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .ctaBtn:hover {
   cursor: pointer;
+}
+
+/* Hide on desktop, show on mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-green);
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: block;
+  background: var(--color-white);
+  padding: 2rem 1.375rem;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+}
+
+.mobileNavLink {
+  font-size: 1rem;
+  color: var(--color-green);
+  text-decoration: none;
+}
+
+/* Desktop vs Mobile */
+.desktopNav {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+
+  }
+
+  .closeIcon {
+    font-size: 28px;
+    color: var(--color-green);
+  }
+}
+
+@media (max-width: 640px) {
+  .toolTip {
+    display: none;
+  }
 }

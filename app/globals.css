@@ -8,9 +8,11 @@
   --color-warning: #f59e0b;
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-text-green: #81A694;
-
-
+  --color-green: #81A694;
+  --button-bg-color: #2A4E42;
+  --sub-title-color: #65695B;
+  --color-description: #808797;
+  --color-learn-btn: #2C6964;
 }
 
 *,
@@ -58,10 +60,31 @@ a {
   padding: 0 40px;
 }
 
+.hero-main-container {
+  max-width: 1439px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 12px;
+  }
+
+  .sub-container {
+    padding: 0 20px;
+  }
+
+  .hero-main-container {
+    padding: 0 20px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1300px) {
   html {
     font-size: 12px;
   }
+
 }
 
 @media (min-width: 1301px) and (max-width: 1500px) {
@@ -92,4 +115,12 @@ a {
   html {
     font-size: 28px;
   }
+}
+
+.primary-font {
+  font-family: var(--font-poppins);
+}
+
+.secondary-font {
+  font-family: var(--font-inter);
 }

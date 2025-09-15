@@ -1,0 +1,52 @@
+.left-col {
+  width: 75%;
+}
+
+.right-col {
+  width: auto;
+}
+
+.banner-title {
+  font-family: var(--font-poppins);
+  font-size: 3.75rem;
+  line-height: 4.125rem;
+}
+
+.banner-sub-title {
+  font-family: var(--font-inter);
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+
+.meet-doctor-btn {
+  font-family: var(--font-poppins);
+  background-color: var(--button-bg-color);
+  cursor: pointer;
+}
+
+.bottom-border-line {
+  border-bottom: 1px solid #fff;
+}
+
+.title-count {
+  font-family: var(--font-poppins);
+  font-size: 2.313rem;
+  line-height: 2.313rem;
+}
+
+.title-count-text {
+  font-family: var(--font-poppins);
+}
+
+@media (max-width: 640px) {
+  .left-col {
+    width: 100%;
+  }
+
+  .right-col {
+    width: 100%;
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 1024px) {}

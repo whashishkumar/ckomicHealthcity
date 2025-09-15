@@ -1,0 +1,132 @@
+.services-root-wanner {
+  background-color: var(--color-green);
+}
+
+.banner-info-title {
+  text-align: center;
+}
+
+.banner-info-title {
+  font-family: var(--font-poppins);
+  color: var(--color-white);
+}
+
+.service-header-title {
+  font-size: 2.875rem;
+  font-weight: 300;
+}
+
+.service-subtitle {
+  font-family: 20px;
+}
+
+.service-card {
+  padding: 2rem 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  min-height: 458px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.icon-wrapper-cornner {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  object-fit: scale-down;
+}
+
+.icon-wrapper {
+  background-color: var(--color-learn-btn);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.informartin-container-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: self-end;
+}
+
+.service-title {
+  font-size: 1.625rem;
+  font-weight: 600;
+  color: #5C8C6C;
+  font-family: var(--font-instrument);
+}
+
+.service-desc {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--color-description);
+  flex-grow: 1;
+  font-family: var(--font-poppins);
+}
+
+.read-more {
+  display: flex;
+  gap: 10px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #0c7c68;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 0.6rem 1rem;
+  border-top-left-radius: 1.25rem;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: var(--font-poppins);
+  border: 0;
+}
+
+.btn-icon-arrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  transform: rotate(308deg);
+}
+
+.icon-btnleft-cornner {
+  position: absolute;
+  right: 42%;
+  bottom: 0%;
+  transform: translate(-42%);
+}
+
+.icon-btnTo-cornner {
+  position: absolute;
+  right: -1%;
+  bottom: 9%;
+  transform: translate(-9%);
+}
+
+.read-more:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .icon-btnleft-cornner {
+    display: none;
+  }
+
+  .icon-btnTo-cornner {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .icon-btnleft-cornner {
+    display: none;
+  }
+
+  .icon-btnTo-cornner {
+    display: none;
+  }
+}
