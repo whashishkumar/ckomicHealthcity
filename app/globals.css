@@ -13,6 +13,9 @@
   --sub-title-color: #65695B;
   --color-description: #808797;
   --color-learn-btn: #2C6964;
+  --color-doctor-title: #5C8C6C;
+  --color-alternative-btn: #ADC89B;
+  --color-specialities: #E2F0F4;
 }
 
 *,
@@ -89,31 +92,31 @@ a {
 
 @media (min-width: 1301px) and (max-width: 1500px) {
   html {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
 @media (min-width: 1550px) and (max-width: 1800px) {
   html {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 @media (min-width: 1901px) and (max-width: 2100px) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 @media (min-width: 2101px) and (max-width: 2500px) {
   html {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
 @media (min-width: 2501px) and (max-width: 3000px) {
   html {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
 

@@ -92,25 +92,25 @@ export default function PatientServices() {
                 <p className="service-desc mt-3">{service.desc}</p>
               </div>
               <div>
-                <Image
+                {/* <Image
                   className="icon-btnTo-cornner object-scale-down"
                   src="/images/btnShape.png"
                   alt="Laboratory Icon"
                   width={25}
                   height={25}
-                />
+                /> */}
 
                 <Link href="/services/laboratory" className="read-more ">
                   Read more <FaArrowRight className="btn-icon-arrow" />
                 </Link>
 
-                <Image
+                {/* <Image
                   className="icon-btnleft-cornner object-scale-down"
                   src="/images/btnShape.png"
                   alt="Laboratory Icon"
                   width={25}
                   height={25}
-                />
+                /> */}
               </div>
             </div>
           ))}

@@ -34,11 +34,22 @@ const instrument = localFont({
   variable: "--font-instrument",
 });
 
+const plusJakartaSans = localFont({
+  src: [
+    {
+      path: "../public/fonts/PlusJakartaSans-SemiBold.ttf",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+  variable: "--font-plusJakartaSans",
+});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${inter.variable}   ${instrument.variable}antialiased`}
+        className={`  ${plusJakartaSans.variable}${poppins.variable} ${inter.variable} ${instrument.variable}antialiased`}
       >
         <Navbar />
         {children}

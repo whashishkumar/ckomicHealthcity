@@ -1,0 +1,10 @@
+.arrow-btn-box {
+  height: 2.188rem;
+  width: 2.5rem;
+  border: 1px solid #81A694;
+  cursor: pointer;
+}
+
+.arow-icon {
+  color: #81A694;
+}

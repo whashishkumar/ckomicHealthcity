@@ -1,0 +1,11 @@
+.heading-title-text {
+  font-family: var(--font-poppins);
+  font-size: 2.375rem;
+  font-weight: 300;
+}
+
+.sub-heading-title {
+  font-family: var(--font-poppins);
+  font-size: 1rem;
+  font-weight: 400;
+}

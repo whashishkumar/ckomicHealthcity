@@ -1,0 +1,80 @@
+.our-specialities-wrapper {
+  background-color: var(--color-green);
+}
+
+.text-color {
+  color: var(--color-specialities);
+}
+
+.our-specialities-title {
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+  color: var(--color-white);
+}
+
+.our-specialities-desc {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  color: var(--color-specialities);
+}
+
+.our-specialities-readMore {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.563rem;
+  color: var(--color-white);
+}
+
+.border-bottom {
+  height: 1px;
+  background-color: #A7E4F2;
+}
+
+.client-Satisfaction-Rate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rate-desceraption {
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: 1rem;
+  max-width: 10rem;
+  text-align: left;
+}
+
+.rate-count {
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  font-size: 2.493rem;
+  line-height: 3.25rem;
+
+}
+
+@media (max-width: 1024px) {
+  .rate-desceraption {
+    max-width: 100%;
+    display: flex;
+    align-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .client-Satisfaction-Rate {
+    justify-content: left;
+  }
+
+  .rate-desceraption {
+    max-width: 100%;
+    display: flex;
+    align-self: center;
+  }
+}
