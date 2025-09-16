@@ -1,6 +1,9 @@
 .headerParentWrapper {
+  background-color: var(--color-white);
   width: 100%;
-  z-index: 999;
+  /* z-index: 999; */
+  /* position: sticky; */
+  /* top: 0; */
 }
 
 .toolTip {
@@ -11,8 +14,7 @@
 }
 
 .header {
-  position: sticky;
-  top: 0;
+
   background: var(--color-white);
   padding: 10px 0;
   z-index: 999;
@@ -137,10 +139,30 @@
     font-size: 28px;
     color: var(--color-green);
   }
+
+  .toolTip {
+    display: none;
+  }
+
+  .headerParentWrapper {
+
+    width: 100%;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+  }
 }
 
 @media (max-width: 640px) {
   .toolTip {
     display: none;
+  }
+
+  .headerParentWrapper {
+
+    width: 100%;
+    z-index: 999;
+    position: sticky;
+    top: 0;
   }
 }

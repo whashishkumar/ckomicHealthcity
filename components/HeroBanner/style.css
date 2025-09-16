@@ -1,3 +1,7 @@
+.banner-page-bg {
+  background-color: var(--color-white);
+}
+
 .left-col {
   width: 75%;
 }

@@ -38,7 +38,7 @@ export const reviews = [
 
 export default function OurPatientsReviews() {
   return (
-    <div className="hero-main-container">
+    <div className="hero-main-container our-patients-bg">
       <div className="py-16">
         <PageTitle
           tag="Testimonials"
@@ -48,12 +48,12 @@ export default function OurPatientsReviews() {
           wrapperClass="mx-auto"
         />
         <div className="testimonials-reviews mt-5 grid grid-cols-1 md:grid-cols-[30%_60%] lg:grid-cols-[30%_60%] gap-10">
-          <div className="review-img-container ">
+          <div className="review-img-container relative">
             <Image
               src={"/images/doctor.png"}
               alt="test"
-              height={400}
-              width={400}
+              height={538}
+              width={583}
               className="object-cover rounded-[10px]"
             />
             <p className="happy-patients-tag">🙂 8K+ Happy Patients</p>

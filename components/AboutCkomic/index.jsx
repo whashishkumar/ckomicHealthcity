@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import "./style.css";
+import PageTitle from "../../ui/PageTitle";
 
 export default function AboutCkomic() {
   return (
@@ -35,12 +36,12 @@ export default function AboutCkomic() {
           </div>
         </div>
         <div className="space-y-6 self-start">
-          <span className="px-4 py-1 bg-gray-100 text-black text-base rounded-full  font-normal">
-            Who we are
-          </span>
-          <h2 className="font-light  title-cosmic mt-5">
-            About Ckosmic Health
-          </h2>
+          <PageTitle
+            tag="Who we are"
+            heading="About Ckosmic Health"
+            headingClass="text-4xl font-bold text-blue-700 mt-4 doctors-title-heading"
+            wrapperClass="max-w-3xl mx-auto text-left "
+          />
           <p className="leading-relaxed about-cosmic-desc">
             At Ckosmic Health, we believe healthcare goes beyond treatment— it’s
             about building trust, fostering wellness, and inspiring healthier

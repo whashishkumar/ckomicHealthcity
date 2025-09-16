@@ -4,7 +4,7 @@ import "./style.css";
 
 export default function HeroSection() {
   return (
-    <div className="">
+    <div className="banner-page-bg">
       <section className="relative  min-h-[670px] overflow-hidden rounded-b-[50px] ">
         <video
           autoPlay

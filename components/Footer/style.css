@@ -1,0 +1,36 @@
+.footer-parent-wrapper {
+  background-color: var(--color-green);
+}
+
+.footer-desc-title {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  color: var(--color-white);
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+.footer-social-title {
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: 0.081rem;
+  line-height: 1.125rem;
+}
+
+.footer-title {
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  color: var(--color-white);
+  font-size: 1.25rem;
+  line-height: 2.109rem;
+}
+
+.footer-links {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  color: var(--color-white);
+  font-size: 1.125rem;
+  line-height: 2rem;
+}
