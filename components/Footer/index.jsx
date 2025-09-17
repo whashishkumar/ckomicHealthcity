@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import "./style.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -42,8 +43,15 @@ export const socialLinks = [
 ];
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Subscribed with:", email);
+  };
+
   return (
-    <div className="footer-parent-wrapper py-16">
+    <div className="footer-parent-wrapper pt-16">
       <div className="hero-main-container ">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6  ">
           <div>
@@ -80,7 +88,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="flex  items-center md:items-center lg:items-center flex-col">
+          <div className="flex  items-start md:items-center lg:items-center flex-col">
             <ul>
               <p className="mt-8 mb-3 footer-title">Main pages</p>
               {menuItems.map((item) => (
@@ -95,17 +103,35 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <p className="mt-8 mb-3 footer-title">
+            <p className="lg:mt-8 mb-3 footer-title ">
               Subscribe to our newsletter
             </p>
             <p className="mt-6 footer-desc-title">
               Lorem ipsum dolor sit amet consectetur odio vel nunc platea orci
               quis dolor ac aliquet in sit viverra et.
             </p>
-            {/* <button>Subscribe</button> */}
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:flex-col lg:flex-col md:items-start gap-4 lg:items-start mt-8"
+            >
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full  px-6 py-3 rounded-full border border-gray-300 focus:outline-none bg-white text-gray-600 "
+                required
+              />
+              <button
+                type="submit"
+                className="subScribe-btn px-6 py-3 justify-center rounded-full border border-white  text-white font-medium flex md:items-start items-center gap-2  hover:cursor-pointer footer-desc-title"
+              >
+                Subscribe <span>→</span>
+              </button>
+            </form>
           </div>
         </div>
-        <span className="flex justify-center md:justify-center lg:justify-end  text-white">
+        <span className="flex justify-center md:justify-center lg:justify-end  py-5 text-white">
           Copyright ©Ckosmin Health City
         </span>
       </div>

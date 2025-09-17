@@ -1,25 +1,16 @@
 .headerParentWrapper {
   background-color: var(--color-white);
   width: 100%;
-  /* z-index: 999; */
-  /* position: sticky; */
-  /* top: 0; */
-}
-
-.toolTip {
-  height: 30px;
-  background-color: var(--color-success);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  z-index: 999;
+  position: sticky;
+  top: 0;
 }
 
 .header {
-
   background: var(--color-white);
   padding: 10px 0;
   z-index: 999;
 }
-
 
 .headerContainer {
   display: flex;

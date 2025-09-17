@@ -1,0 +1,6 @@
+.toolTip {
+  height: 30px;
+  background-color: var(--color-success);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

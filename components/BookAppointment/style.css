@@ -1,0 +1,24 @@
+.appoinment-booking-wrapper {
+  background-color: var(--color-green);
+}
+
+.form-placeholder-text {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 1rem;
+  color: #848484;
+  background: #F2F2F2;
+}
+
+.error-text-msg {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.book-appoitment-btn {
+  font-family: var(--font-poppins);
+  color: var(--color-doctor-title);
+  font-size: 1rem;
+  line-height: 1rem;
+}

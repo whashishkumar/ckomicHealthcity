@@ -39,7 +39,7 @@ export default function AboutCkomic() {
           <PageTitle
             tag="Who we are"
             heading="About Ckosmic Health"
-            headingClass="text-4xl font-bold text-blue-700 mt-4 doctors-title-heading"
+            headingClass="text-4xl font-bold text-blue-700 mt-4 title-cosmic "
             wrapperClass="max-w-3xl mx-auto text-left "
           />
           <p className="leading-relaxed about-cosmic-desc">

@@ -5,10 +5,9 @@
 .tag-style {
   background: linear-gradient(99.53deg, #B4CCBB 0%, rgba(255, 255, 255, 0) 100%);
   height: 32px;
-  width: 130px;
+  max-width: 130px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  text-align: center;
 }
 
 .review-title-heading {

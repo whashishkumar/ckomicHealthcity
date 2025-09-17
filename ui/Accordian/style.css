@@ -1,0 +1,19 @@
+.accordian-bg {
+  background: #DDDDDD;
+}
+
+.accordian-question {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5px;
+  color: var(--color-accordian-text);
+
+}
+
+.faq-answer {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--color-accordian-text);
+}

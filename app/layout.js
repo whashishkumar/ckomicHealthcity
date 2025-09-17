@@ -1,7 +1,9 @@
+"use client";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Providers } from "../context/providers";
 
 const poppins = localFont({
   src: [
@@ -50,11 +52,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`  ${plusJakartaSans.variable}${poppins.variable} ${inter.variable} ${instrument.variable}antialiased`}
+        className={` ${plusJakartaSans.variable}${poppins.variable} ${inter.variable} ${instrument.variable}antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <>
+          <Providers>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </Providers>
+        </>
       </body>
     </html>
   );

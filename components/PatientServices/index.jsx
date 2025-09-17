@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./style.css";
 import { FaArrowRight } from "react-icons/fa";
+import PageTitle from "../../ui/PageTitle";
 
 const services = [
   {
@@ -53,15 +54,13 @@ export default function PatientServices() {
   return (
     <div className="services-root-wanner py-16">
       <div className="hero-main-container">
-        <div className="banner-info-title">
-          <h1 className="service-header-title font-medium capitalize">
-            Patient Services
-          </h1>
-          <p className="service-subtitle font-normal capitalize">
-            Comprehensive support services to ensure your comfort and
-            convenience during your healthcare journey.
-          </p>
-        </div>
+        <PageTitle
+          heading="Patient Services"
+          subHeading=" Comprehensive support services to ensure your comfort and convenience during your healthcare journey."
+          headingClass="text-white"
+          subHeadingClass="text-white mt-2 text-[22px] "
+          wrapperClass="mx-auto w-full flex flex-col items-center"
+        />
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-16 w-full">
           {services.map((service) => (

@@ -3,38 +3,30 @@ import { useState } from "react";
 import Link from "next/link";
 import styles from "./style.module.css";
 import { IoMdClose } from "react-icons/io";
+import ToolTip from "../ToolTip";
+import { useMenuList } from "../../context/HeaderContext";
 
 const menuItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Our Specialties", href: "/specialties" },
-  { label: "Patient Services", href: "/services" },
+  { label: "Patient Services", href: "/patient-services" },
   { label: "Clinic Visit", href: "/clinic-visit" },
-  { label: "Our Doctors", href: "/doctors" },
-  { label: "Blogs & Health Library", href: "/blogs" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Our Doctors", href: "/our-doctors" },
+  { label: "Blogs& Health Library", href: "/blogs" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const { menuItemsList } = useMenuList();
+  console.log(menuItemsList, "useMenuList");
   return (
     <>
       <div className={`${styles.headerParentWrapper}`}>
-        <div className={`sub-container`}>
-          <div
-            className={`${styles.toolTip} flex justify-between px-3 text-white items-center  `}
-          >
-            <p className="flex gap-4 secondary-font">
-              <span className="text-sm">info@ckosmichealth.com</span>
-              <span className="text-sm ">+91-98765-43210</span>
-            </p>
-            <p className="flex gap-4 capitalize secondary-font">
-              <span className="text-sm ">english</span>
-              <span className="text-sm ">punjabi</span>
-            </p>
-          </div>
+        <div className="tip">
+          <ToolTip />
         </div>
-
         <header className={`${styles.header} container`}>
           <div className={`sub-container ${styles.headerContainer}  `}>
             <div className={styles.logo}>

@@ -1,5 +1,8 @@
 import AboutCkomic from "../components/AboutCkomic";
+import AppointmentBooking from "../components/BookAppointment";
+import FAQ from "../components/FAQ";
 import HeroSection from "../components/HeroBanner";
+import OurBlog from "../components/OurBlog";
 import OurDoctors from "../components/OurDoctors";
 import OurMedicalSpecialities from "../components/OurMedicalSpecialties";
 import OurPatientsReviews from "../components/OurPatientsReviews";
@@ -14,6 +17,9 @@ export default function page() {
       <OurDoctors />
       <OurMedicalSpecialities />
       <OurPatientsReviews />
+      <AppointmentBooking />
+      <OurBlog />
+      <FAQ />
     </>
   );
 }

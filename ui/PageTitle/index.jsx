@@ -14,7 +14,7 @@ const PageTitle = ({
     <div className={`text-lg font-normal text-gray-500 ${wrapperClass}`}>
       {tag && (
         <h1
-          className={`text-sm font-medium text-gray-600 flex  justify-center items-center tag-style ${tagClass}`}
+          className={`text-sm font-medium text-gray-600 flex  pl-3 items-center tag-style ${tagClass}`}
         >
           {tag}
         </h1>
@@ -25,7 +25,7 @@ const PageTitle = ({
         </p>
       )}
       {subHeading && (
-        <p className={`sub-heading-title ${subHeadingClass}`}>{subHeading}</p>
+        <p className={`sub-heading-title  ${subHeadingClass}`}>{subHeading}</p>
       )}
     </div>
   );

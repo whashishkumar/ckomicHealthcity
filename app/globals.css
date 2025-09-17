@@ -16,6 +16,7 @@
   --color-doctor-title: #5C8C6C;
   --color-alternative-btn: #ADC89B;
   --color-specialities: #E2F0F4;
+  --color-accordian-text: #3B3B3B;
 }
 
 *,
@@ -92,13 +93,13 @@ a {
 
 @media (min-width: 1301px) and (max-width: 1500px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 @media (min-width: 1550px) and (max-width: 1800px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -126,4 +127,25 @@ a {
 
 .secondary-font {
   font-family: var(--font-inter);
+}
+
+.text-primary-color {
+  color: var(--color-secondary);
+
+}
+
+.text-secondary-color {
+  color: var(--sub-title-color);
+}
+
+.text-color-for-bg {
+  color: var(--color-accordian-text);
+}
+
+.tag-style {
+  background: linear-gradient(99.53deg, #B4CCBB 0%, rgba(255, 255, 255, 0) 100%);
+  height: 32px;
+  max-width: 130px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 }

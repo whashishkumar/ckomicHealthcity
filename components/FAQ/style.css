@@ -1,0 +1,7 @@
+.faq-container-wrappwer {
+  background: var(--color-white)
+}
+
+.faq-header-title-text {
+  color: var(--color-doctor-title);
+}
