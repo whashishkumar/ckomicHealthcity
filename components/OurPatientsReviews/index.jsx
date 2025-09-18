@@ -50,7 +50,7 @@ export default function OurPatientsReviews() {
         <div className="testimonials-reviews mt-5 grid grid-cols-1 md:grid-cols-[30%_60%] lg:grid-cols-[30%_60%] gap-10">
           <div className="review-img-container">
             <Image
-              src="/images/doctor.png"
+              src="/images/about02.jpg"
               alt="test"
               height={538}
               width={583}
