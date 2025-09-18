@@ -9,7 +9,7 @@ export default function AppointmentBooking() {
       <div className="hero-main-container">
         <AppointmentForm />
       </div>
-      <div className="h-full hidden  lg:block">
+      <div className="h-full hidden lg:block">
         <Image
           src="/images/appotmentbg.jpg"
           alt="appointment"
