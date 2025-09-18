@@ -54,8 +54,9 @@ export default function OurPatientsReviews() {
               alt="test"
               height={538}
               width={583}
-              className="object-cover rounded-[10px]"
+              className="object-cover rounded-[10px] w-full h-full"
             />
+
             <p className="happy-patients-tag">🙂 8K+ Happy Patients</p>
           </div>
 
