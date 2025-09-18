@@ -50,13 +50,12 @@ export default function OurPatientsReviews() {
         <div className="testimonials-reviews mt-5 grid grid-cols-1 md:grid-cols-[30%_60%] lg:grid-cols-[30%_60%] gap-10">
           <div className="review-img-container relative">
             <Image
-              src={"/images/doctor.png"}
+              src="/images/doctor.png"
               alt="test"
               height={538}
               width={583}
               className="object-cover rounded-[10px] w-full h-full"
             />
-
             <p className="happy-patients-tag">🙂 8K+ Happy Patients</p>
           </div>
 
