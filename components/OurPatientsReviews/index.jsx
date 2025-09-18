@@ -48,7 +48,7 @@ export default function OurPatientsReviews() {
           wrapperClass="mx-auto"
         />
         <div className="testimonials-reviews mt-5 grid grid-cols-1 md:grid-cols-[30%_60%] lg:grid-cols-[30%_60%] gap-10">
-          <div className="review-img-container relative">
+          <div className="review-img-container">
             <Image
               src="/images/doctor.png"
               alt="test"
