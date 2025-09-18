@@ -56,7 +56,7 @@ export default function Specialties() {
                 className={`
   flex flex-col gap-3 pb-6 pr-6
   border-b border-[#A7E4F2] lg:border-b-0
-  ${(idx + 1) % 3 !== 0 ? "lg:border-r border-[#A7E4F2]" : ""}
+  ${(idx + 1) % 3 !== 0 ? "lg:border-r border-[#A8BAB2]" : ""}
 
 `}
               >
@@ -75,7 +75,7 @@ export default function Specialties() {
 
               {/* Bottom border after first row on desktop only */}
               {idx + 1 === 3 && (
-                <div className="hidden lg:block col-span-3 border-b border-[#A7E4F2] mt-6"></div>
+                <div className="hidden lg:block col-span-3 border-b border-[#A8BAB2] mt-6"></div>
               )}
             </React.Fragment>
           ))}

@@ -1,5 +1,10 @@
 import React from "react";
+import OurSpecialties from "../../components/OurSpecialties";
 
-export default function OurSpeclities() {
-  return <div>OurSpeclities</div>;
+export default function speclities() {
+  return (
+    <div>
+      <OurSpecialties />
+    </div>
+  );
 }

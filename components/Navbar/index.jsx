@@ -9,7 +9,7 @@ import { useMenuList } from "../../context/HeaderContext";
 const menuItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Our Specialties", href: "/specialties" },
+  { label: "Our Specialties", href: "/our-speclities" },
   { label: "Patient Services", href: "/patient-services" },
   { label: "Clinic Visit", href: "/clinic-visit" },
   { label: "Our Doctors", href: "/our-doctors" },

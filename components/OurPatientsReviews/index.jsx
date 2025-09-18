@@ -60,7 +60,13 @@ export default function OurPatientsReviews() {
           </div>
 
           <div className="review-secion flex flex-col py-14">
-            <SwipeSlider slidesPerView={1} spaceBetween={30} autoPlay={true}>
+            <SwipeSlider
+              slidesPerView={1}
+              spaceBetween={30}
+              autoPlay={true}
+              textQuort={true}
+              bottomSwipeBtn={true}
+            >
               {reviews.map((review) => (
                 <div
                   key={review.id}

@@ -15,9 +15,9 @@ export function HeaderContext({ children }) {
     setLoading(false);
   };
 
-  useEffect(() => {
-    fetchMenuListItems();
-  }, []);
+  // useEffect(() => {
+  //   fetchMenuListItems();
+  // }, []);
 
   return (
     <DataContext.Provider

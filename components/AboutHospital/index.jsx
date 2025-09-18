@@ -5,14 +5,16 @@ import Image from "next/image";
 export default function AboutHospital() {
   return (
     <div className="hero-main-container">
-      <div className="grid lg:grid-cols-[40%_60%] grid-cols-1 py-14">
-        <Image
-          src={"/images/appotmentbg.jpg"}
-          alt="hospital"
-          height={400}
-          width={450}
-          className="object-cover"
-        />
+      <div className="grid lg:grid-cols-[40%_60%] grid-cols-1 py-14 gap-5">
+        <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px]">
+          <Image
+            src="/images/appotmentbg.jpg"
+            alt="hospital"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
         <div>
           <PageTitle
             heading="Best Weight Loss Surgery Hospital in Punjab"

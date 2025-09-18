@@ -40,11 +40,11 @@ export default function WhyCokmic() {
   return (
     <div className="wrapper-whyCkocmic">
       <div className="hero-main-container">
-        <div className="grid grid-cols-2 py-14 gap-20">
+        <div className="grid lg:grid-cols-2 py-14 gap-20">
           <div className="">
             <PageTitle
               heading="Why CKOSMIC health city is the best beight loss Hospital in Punjab."
-              headingClass="text-lg mb-8 capitalize"
+              headingClass="text-base mb-8 capitalize"
               wrapperClass="text-left text-white "
             />
             <div>
@@ -54,9 +54,9 @@ export default function WhyCokmic() {
           <div>
             <PageTitle
               heading="Meet Dr. Amit Sood: The Best Weight Loss Surgeon in Punjab"
-              headingClass="text-lg mb-8 text-white "
+              headingClass="text-base mb-8 text-white "
             />
-            <p className="font-normal primary-font text-color-for-bg ">
+            <p className="font-normal primary-font text-color-for-bg">
               Dr. Amit Sood is the driving force behind CKOSMIC Health City’s
               success. As the Best Weight Loss Surgeon in Punjab, Dr. Sood
               brings years of experience, unmatched expertise, and a
