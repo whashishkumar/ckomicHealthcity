@@ -7,12 +7,12 @@ import Link from "next/link";
 const menuItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Our Specialties", href: "/specialties" },
-  { label: "Patient Services", href: "/services" },
+  { label: "Our Specialties", href: "/our-speclities" },
+  { label: "Patient Services", href: "/patient-services" },
   { label: "Clinic Visit", href: "/clinic-visit" },
-  { label: "Our Doctors", href: "/doctors" },
-  { label: "Blogs & Health Library", href: "/blogs" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Our Doctors", href: "/our-doctors" },
+  { label: "Blogs& Health Library", href: "/blogs" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 export const socialLinks = [

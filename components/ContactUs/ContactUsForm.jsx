@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
+import "./style.css";
 // ✅ Zod Schema inside same file
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -40,104 +40,135 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
-
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <div>
+      <h2 className="font-medium  text-center text-gray-600 text-2xl secondary-font my-2 text-secondary-color">
+        Contact Us
+      </h2>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
         {/* Name */}
         <div>
-          <label className="block font-medium">Name</label>
+          <label className="font-normal primary-font text-color-for-bg">
+            Name
+          </label>
           <input
             type="text"
             {...register("name")}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded font-normal primary-font text-color-for-bg outline-none"
           />
           {errors.name && (
-            <p className="text-red-500 text-sm">{errors.name.message}</p>
+            <p className="text-red-500 text-sm  primary-font ">
+              {errors.name.message}
+            </p>
           )}
         </div>
 
         {/* Email */}
         <div>
-          <label className="block font-medium">Email</label>
+          <label className="font-normal primary-font text-color-for-bg">
+            Email
+          </label>
           <input
             type="email"
             {...register("email")}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded font-normal primary-font text-color-for-bg outline-none"
           />
           {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email.message}</p>
+            <p className="text-red-500 text-sm primary-font ">
+              {errors.email.message}
+            </p>
           )}
         </div>
 
         {/* Phone */}
         <div>
-          <label className="block font-medium">Phone No</label>
+          <label className="font-normal primary-font text-color-for-bg">
+            Phone No
+          </label>
           <input
             type="text"
             {...register("phone")}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded font-normal primary-font text-color-for-bg outline-none"
           />
           {errors.phone && (
-            <p className="text-red-500 text-sm">{errors.phone.message}</p>
+            <p className="text-red-500 text-sm  primary-font ">
+              {errors.phone.message}
+            </p>
           )}
         </div>
 
-        {/* Age */}
-        <div>
-          <label className="block font-medium">Age</label>
-          <input
-            type="text"
-            {...register("age")}
-            className="w-full p-2 border rounded"
-          />
-          {errors.age && (
-            <p className="text-red-500 text-sm">{errors.age.message}</p>
-          )}
-        </div>
+        {/* Age + Weight in one line */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Age */}
+          <div>
+            <label className="font-normal primary-font text-color-for-bg">
+              Age
+            </label>
+            <input
+              type="text"
+              {...register("age")}
+              className="w-full p-2 border rounded font-normal primary-font text-color-for-bg outline-none"
+            />
+            {errors.age && (
+              <p className="text-red-500 text-sm  primary-font ">
+                {errors.age.message}
+              </p>
+            )}
+          </div>
 
-        {/* Weight */}
-        <div>
-          <label className="block font-medium">Weight (kg)</label>
-          <input
-            type="text"
-            {...register("weight")}
-            className="w-full p-2 border rounded"
-          />
-          {errors.weight && (
-            <p className="text-red-500 text-sm">{errors.weight.message}</p>
-          )}
+          {/* Weight */}
+          <div>
+            <label className="font-normal primary-font text-color-for-bg">
+              Weight (kg)
+            </label>
+            <input
+              type="text"
+              {...register("weight")}
+              className="w-full p-2 border rounded font-normal primary-font text-color-for-bg outline-none"
+            />
+            {errors.weight && (
+              <p className="text-red-500 text-sm primary-font">
+                {errors.weight.message}
+              </p>
+            )}
+          </div>
         </div>
-
         {/* Place */}
         <div>
-          <label className="block font-medium">Place</label>
+          <label className="font-normal rounded primary-font text-color-for-bg">
+            Place
+          </label>
           <input
             type="text"
             {...register("place")}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded font-normal primary-font text-color-for-bg outline-none"
           />
           {errors.place && (
-            <p className="text-red-500 text-sm">{errors.place.message}</p>
+            <p className="text-red-500 text-sm  primary-font ">
+              {errors.place.message}
+            </p>
           )}
         </div>
 
         {/* Message */}
         <div>
-          <label className="block font-medium">Message</label>
+          <label className="font-normal primary-font text-color-for-bg">
+            Message
+          </label>
           <textarea
             {...register("message")}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded font-normal primary-font text-color-for-bg outline-none"
             rows="4"
           />
           {errors.message && (
-            <p className="text-red-500 text-sm">{errors.message.message}</p>
+            <p className="text-red-500 text-sm  primary-font ">
+              {errors.message.message}
+            </p>
           )}
         </div>
 
         <button
           type="submit"
-          className="w-full bg-amber-500 hover:bg-amber-600 text-white p-2 rounded"
+          className="w-full text-white p-2 rounded contact-us-btn"
         >
           Submit
         </button>

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import "./style.css";
 import PageTitle from "../../ui/PageTitle";
+import Link from "next/link";
 
 export default function AboutCkomic() {
   return (
@@ -53,9 +54,12 @@ export default function AboutCkomic() {
             We are driven by the vision of creating a healthier future where
             quality care is accessible to everyone, anytime, anywhere.
           </p>
-          <button className="px-6 py-3  about-learn-btn secondary-font mt-6">
+          <Link
+            href={"/about"}
+            className="px-6 py-3  about-learn-btn secondary-font mt-6"
+          >
             Learn more
-          </button>
+          </Link>
         </div>
       </div>
     </section>

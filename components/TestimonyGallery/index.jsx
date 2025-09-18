@@ -31,7 +31,7 @@ export default function TestimonyGallery() {
   ];
 
   return (
-    <div className="gallery-wrapper">
+    <div className="gallery-wrapper bg-white">
       <div className="hero-main-container">
         <div className="py-14">
           <PageTitle

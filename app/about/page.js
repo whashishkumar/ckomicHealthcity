@@ -21,7 +21,6 @@ export default function About() {
       <AboutFaq />
       <Location />
       <Reviews />
-
       <TopCitiesSurgeon />
     </div>
   );

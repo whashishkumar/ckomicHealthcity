@@ -36,19 +36,23 @@ export const surgeons = [
 
 export default function TopCitiesSurgeon() {
   return (
-    <div className="topCitiesSurgeonWrapper">
+    <div className="topCitiesSurgeonWrapper bg-white">
       <div className="hero-main-container">
         <div className="py-12">
           {surgeons.map((surgeon, idx) => (
             <div key={idx} className="mb-8">
-              <h2 className="text-2xl  font-medium primary-font text-secondary-color">
-                {surgeon.type} in Top Cities
+              <h2 className="text-xl font-medium primary-font text-secondary-color">
+                <span className="font-semibold text-primary-color">
+                  {surgeon.type}{" "}
+                </span>{" "}
+                in Top Cities
               </h2>
               <div className="flex flex-wrap py-2 text-color-for-bg">
                 {surgeon.cities.map((city, cityIdx) => (
                   <Link key={cityIdx} href={city.url}>
                     <p className="text-color-for-bg mr-2">
-                      {`Best ${surgeon.type.toLowerCase()} in ${city.name} | `}
+                      {`Best ${surgeon.type.toLowerCase()} in `}
+                      <span className="font-semibold">{city.name}</span>
                     </p>
                   </Link>
                 ))}

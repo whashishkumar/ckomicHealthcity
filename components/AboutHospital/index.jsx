@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function AboutHospital() {
   return (
-    <div className="hero-main-container">
+    <div className="hero-main-container bg-white">
       <div className="grid lg:grid-cols-[40%_60%] grid-cols-1 py-14 gap-5">
         <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px]">
           <Image

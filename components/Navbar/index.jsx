@@ -20,7 +20,7 @@ const menuItems = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { menuItemsList } = useMenuList();
-  console.log(menuItemsList, "useMenuList");
+
   return (
     <>
       <div className={`${styles.headerParentWrapper}`}>

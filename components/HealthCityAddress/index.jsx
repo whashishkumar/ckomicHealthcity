@@ -57,7 +57,7 @@ export default function HealthCityAddress() {
     <div className="">
       {contactInfo.map((item) => (
         <div key={item.id}>
-          <h3 className="font-medium text-gray-600 text-xl secondary-font my-2 text-secondary-color ">
+          <h3 className="font-medium text-xl secondary-font my-2 text-secondary-color ">
             {item.label}
           </h3>
           {item.type === "phone" ? (

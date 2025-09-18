@@ -43,7 +43,7 @@ const education = [
 
 export default function AboutSurgeon() {
   return (
-    <div className="about-surgeon-wrapper">
+    <div className="about-surgeon-wrapper bg-white">
       <div className="hero-main-container">
         <div className="py-14">
           <PageTitle
@@ -56,6 +56,7 @@ export default function AboutSurgeon() {
               alt="surgen"
               height={400}
               width={550}
+              className="w-full lg:max-w-[550px] h-auto object-cover "
             />
             <div className="">
               <p className="font-bold my-5">Dr. Amit Sood</p>

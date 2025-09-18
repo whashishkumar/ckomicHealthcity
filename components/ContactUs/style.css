@@ -1,0 +1,11 @@
+.contact-us-btn {
+  background-color: var(--color-green);
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
