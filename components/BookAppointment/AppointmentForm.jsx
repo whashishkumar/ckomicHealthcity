@@ -45,6 +45,7 @@ export default function AppointmentForm() {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-7">
         <div>
           <input
+            autoComplete="off"
             type="text"
             placeholder="Full name"
             {...register("name")}
@@ -58,6 +59,7 @@ export default function AppointmentForm() {
         </div>
         <div>
           <input
+            autoComplete="off"
             type="email"
             placeholder="Email"
             {...register("email")}
@@ -72,6 +74,7 @@ export default function AppointmentForm() {
 
         <div>
           <input
+            autoComplete="off"
             type="text"
             placeholder="Contact number"
             {...register("phone")}
@@ -107,6 +110,7 @@ export default function AppointmentForm() {
         </div>
         <div>
           <input
+            autoComplete="off"
             type="text"
             placeholder="Location"
             {...register("location")}
@@ -133,7 +137,7 @@ export default function AppointmentForm() {
         </div>
         <button
           type="submit"
-          className="bg-white px-8 py-5 rounded-md font-medium shadow-md hover:bg-gray-100  cursor-pointer transition book-appoitment-btn"
+          className="bg-white px-8 py-5 rounded-md font-medium shadow-md  book-appoitment-btn"
         >
           Send Message
         </button>

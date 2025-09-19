@@ -4,56 +4,7 @@ import PageTitle from "../../ui/PageTitle";
 import "./style.css";
 import DoctorCard from "./DoctorsCard";
 
-const doctorTypes = [
-  { id: 1, name: "All Doctors" },
-  { id: 2, name: "neurologist" },
-  { id: 3, name: "dermatologist" },
-  { id: 4, name: "orthopedic" },
-];
-const doctors = [
-  {
-    id: 1,
-    name: "Dr. Elora Williams",
-    speciality: "Cardiology",
-    qualification: "MD Cardiology, AIIMS Delhi",
-    experience: 15,
-    timings: "Mon-Fri: 9AM–5PM",
-    image: "/images/doctor.png",
-    type: "All Doctors",
-  },
-  {
-    id: 2,
-    name: "Dr. Rohan Mehta",
-    speciality: "Neurologist",
-    qualification: "DM Neurology, PGI Chandigarh",
-    experience: 12,
-    timings: "Mon-Sat: 10AM–6PM",
-    image: "/images/doctor.png",
-    type: "neurologist",
-  },
-  {
-    id: 3,
-    name: "Dr. Aisha Khan",
-    speciality: "Dermatologist",
-    qualification: "MD Dermatology, AIIMS Delhi",
-    experience: 8,
-    timings: "Tue-Sun: 11AM–7PM",
-    image: "/images/doctor.png",
-    type: "dermatologist",
-  },
-  {
-    id: 4,
-    name: "Dr. Rajiv Kapoor",
-    speciality: "Orthopedic",
-    qualification: "MS Orthopedics, AIIMS Delhi",
-    experience: 18,
-    timings: "Mon-Fri: 9AM–5PM",
-    image: "/images/doctor.png",
-    type: "orthopedic",
-  },
-];
-
-export default function OurDoctors() {
+export default function OurDoctors({ doctors, doctorTypes }) {
   const [activeDoctor, setActiveDoctor] = useState("All Doctors");
 
   return (
@@ -65,7 +16,7 @@ export default function OurDoctors() {
           headingClass="text-4xl font-bold text-blue-700 mt-4 doctors-title-heading"
           wrapperClass="max-w-3xl mx-auto text-left "
         />
-        <div className="flex items-center gap-3  md:gap-3 lg:gap-5 flex-wrap">
+        <div className="flex items-center gap-3 md:gap-3 lg:gap-3 flex-wrap">
           {doctorTypes.map((doctor) => (
             <button
               key={doctor.id}

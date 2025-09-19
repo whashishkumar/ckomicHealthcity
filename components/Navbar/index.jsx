@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./style.module.css";
 import { IoMdClose } from "react-icons/io";
@@ -20,13 +20,29 @@ const menuItems = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { menuItemsList } = useMenuList();
+  const [showTip, setShowTip] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setShowTip(true); // show again at top
+      } else {
+        setShowTip(false); // hide when scrolled
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       <div className={`${styles.headerParentWrapper}`}>
-        <div className="tip">
-          <ToolTip />
-        </div>
+        {showTip && (
+          <div className={`${styles.tip}`}>
+            <ToolTip />
+          </div>
+        )}
         <header className={`${styles.header} container`}>
           <div className={`sub-container ${styles.headerContainer}  `}>
             <div className={styles.logo}>
@@ -36,7 +52,6 @@ export default function Navbar() {
                 className={styles.logoImg}
               />
             </div>
-
             <nav className={`${styles.nav} ${styles.desktopNav}`}>
               {menuItems.map((item) => (
                 <Link

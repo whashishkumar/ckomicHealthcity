@@ -1,15 +1,26 @@
 import React from "react";
-import AboutHospital from "../../components/AboutHospital";
-import WhyCokmic from "../../components/WhyCkocmic";
-import TestimonyGallery from "../../components/TestimonyGallery";
-import AboutSurgeon from "../../components/AboutSurgeon";
-import AboutFaq from "../../components/AboutFAQ";
-import Reviews from "../../components/Reviews";
-import Location from "../../components/Location";
-import Testimonial from "../../components/Testimonials";
-import TopCitiesSurgeon from "../../components/TopCitiesSurgeon";
+import AboutSurgeon from "../../../components/AboutSurgeon";
+import Location from "../../../components/Location";
+import Banner from "../../../components/Banner";
+import AppointmentBooking from "../../../components/BookAppointment";
+import AboutFaq from "../../../components/AboutFAQ";
+import TopCitiesSurgeon from "../../../components/TopCitiesSurgeon";
+import Reviews from "../../../components/Reviews";
 
-// /best-weight-loss-surgery-hospital-in-punjab/
+const contactBanners = [
+  {
+    id: 1,
+    image: "/images/Contact-us-banner.webp",
+    tag: "About us",
+    subHeading: `Ckosmic Health City, Moga is the base center of Dr. Amit Sood where
+    all types of bariatric/ weight loss surgeries are performed. The
+    center is equipped with ultra modern high definition operation
+    theatre and world class rooms. At Ckosmic Health City Moga other
+    than Bariatric/weight loss surgery, Laparoscopic surgery for
+    different types of hernias, fibroids, gallbladder, kidney removal
+    etc. .... are also performed.`,
+  },
+];
 
 const faqs = [
   {
@@ -46,16 +57,14 @@ const faqPageTitle = {
   wrapperClass: "max-w-3xl text-left",
   tagClass: "text-white",
 };
-export default function About() {
+export default function DoctorDetailPage({ params }) {
   return (
     <div>
-      <AboutHospital />
-      <WhyCokmic />
-      <TestimonyGallery />
-      <Testimonial />
+      <Banner bannerPageData={contactBanners} />
       <AboutSurgeon />
-      <AboutFaq faqs={faqs} faqPageTitle={faqPageTitle} />
+      <AppointmentBooking />
       <Location />
+      <AboutFaq faqs={faqs} faqPageTitle={faqPageTitle} />
       <Reviews />
       <TopCitiesSurgeon />
     </div>

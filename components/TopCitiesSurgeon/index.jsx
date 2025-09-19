@@ -40,7 +40,7 @@ export default function TopCitiesSurgeon() {
       <div className="hero-main-container">
         <div className="py-12">
           {surgeons.map((surgeon, idx) => (
-            <div key={idx} className="mb-8">
+            <div key={idx} className="lg:mb-8">
               <h2 className="text-xl font-medium primary-font text-secondary-color">
                 <span className="font-semibold text-primary-color">
                   {surgeon.type}{" "}

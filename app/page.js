@@ -38,13 +38,63 @@ const faqPageTitle = {
   wrapperClass: "max-w-3xl text-left",
 };
 
+const doctorTypes = [
+  { id: 1, name: "All Doctors" },
+  { id: 2, name: "neurologist" },
+  { id: 3, name: "dermatologist" },
+  { id: 4, name: "orthopedic" },
+];
+
+const doctors = [
+  {
+    id: 1,
+    name: "Dr. Elora Williams",
+    speciality: "Cardiology",
+    qualification: "MD Cardiology, AIIMS Delhi",
+    experience: 15,
+    timings: "Mon-Fri: 9AM–5PM",
+    image: "/images/doctor.png",
+    type: "All Doctors",
+  },
+  {
+    id: 2,
+    name: "Dr. Rohan Mehta",
+    speciality: "Neurologist",
+    qualification: "DM Neurology, PGI Chandigarh",
+    experience: 12,
+    timings: "Mon-Sat: 10AM–6PM",
+    image: "/images/doctor.png",
+    type: "neurologist",
+  },
+  {
+    id: 3,
+    name: "Dr. Aisha Khan",
+    speciality: "Dermatologist",
+    qualification: "MD Dermatology, AIIMS Delhi",
+    experience: 8,
+    timings: "Tue-Sun: 11AM–7PM",
+    image: "/images/doctor.png",
+    type: "dermatologist",
+  },
+  {
+    id: 4,
+    name: "Dr. Rajiv Kapoor",
+    speciality: "Orthopedic",
+    qualification: "MS Orthopedics, AIIMS Delhi",
+    experience: 18,
+    timings: "Mon-Fri: 9AM–5PM",
+    image: "/images/doctor.png",
+    type: "orthopedic",
+  },
+];
+
 export default function page() {
   return (
     <>
       <HeroSection />
       <AboutCkomic />
       <PatientServices />
-      <OurDoctors />
+      <OurDoctors doctors={doctors} doctorTypes={doctorTypes} />
       <OurMedicalSpecialities />
       <OurPatientsReviews />
       <AppointmentBooking />

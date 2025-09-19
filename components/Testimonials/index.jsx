@@ -65,7 +65,7 @@ export default function Testimonial() {
             tagClass="text-white font-bold"
             wrapperClass="m-auto"
           />
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12 ">
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-6 mt-12 gap-y-10 ">
             {/* Main Video */}
             <div className="col-span-2">
               <h2 className="font-bold mb-5 text-2xl text-white">
@@ -83,7 +83,7 @@ export default function Testimonial() {
             </div>
 
             {/* Playlist */}
-            <div className="flex flex-col gap-4 max-h-[300px] sm:max-h-[400px] md:max-h-[530px] overflow-y-auto pr-2 sm:pr-3 scrollbar-thin">
+            <div className="flex flex-col gap-4 max-h-[300px] sm:max-h-[400px] md:max-h-[530px] overflow-y-auto pr-2 sm:pr-3 scrollbar-hidden">
               {videos.map((video) => (
                 <button
                   key={video.id}

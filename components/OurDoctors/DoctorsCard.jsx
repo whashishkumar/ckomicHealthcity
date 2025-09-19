@@ -2,12 +2,16 @@
 import Image from "next/image";
 import "./style.css";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function DoctorCard({ doctor }) {
   const [appointment, setAppointment] = useState("");
+  const router = useRouter();
 
   const handleBookAppointmentt = (doctorName) => {
     setAppointment(doctorName);
+    console.log(doctorName, "doctorName");
+    router.push(`/our-doctors/${doctorName}`);
   };
 
   return (

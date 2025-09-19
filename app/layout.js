@@ -1,9 +1,14 @@
-"use client";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Providers } from "../context/providers";
+
+export const metadata = {
+  title: "ckosmichealth",
+  description:
+    "At CKOSMIC Health City, we understand that your weight loss journey is not just about losing weight; it’s about reclaiming your health, confidence, and quality of life.",
+};
 
 const poppins = localFont({
   src: [

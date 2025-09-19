@@ -15,10 +15,3 @@
   font-weight: 400;
   font-size: 1rem;
 }
-
-.book-appoitment-btn {
-  font-family: var(--font-poppins);
-  color: var(--color-doctor-title);
-  font-size: 1rem;
-  line-height: 1rem;
-}
