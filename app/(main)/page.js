@@ -1,12 +1,16 @@
-import AboutCkomic from "../components/AboutCkomic";
-import AppointmentBooking from "../components/BookAppointment";
-import FAQ from "../components/FAQ";
-import HeroSection from "../components/HeroBanner";
-import OurBlog from "../components/OurBlog";
-import OurDoctors from "../components/OurDoctors";
-import OurMedicalSpecialities from "../components/OurMedicalSpecialties";
-import OurPatientsReviews from "../components/OurPatientsReviews";
-import PatientServices from "../components/PatientServices";
+"use client";
+import { useEffect } from "react";
+import AboutCkomic from "../../components/AboutCkomic";
+import AppointmentBooking from "../../components/BookAppointment";
+import FAQ from "../../components/FAQ";
+import HeroSection from "../../components/HeroBanner";
+import OurBlog from "../../components/OurBlog";
+import OurDoctors from "../../components/OurDoctors";
+
+import OurMedicalSpecialities from "../../components/OurMedicalSpecialties";
+import OurPatientsReviews from "../../components/OurPatientsReviews";
+import PatientServices from "../../components/PatientServices";
+import { useFaqContext } from "../../context/FaqContext";
 
 const faqs = [
   {
@@ -30,13 +34,6 @@ const faqs = [
       "We offer a wide range of healthcare services including general consultations, dental care, cardiology, and therapy sessions.",
   },
 ];
-
-const faqPageTitle = {
-  tag: "FAQ's",
-  heading: "Frequently Asked Question",
-  headingClass: "text-4xl font-bold mt-4 faq-header-title-text",
-  wrapperClass: "max-w-3xl text-left",
-};
 
 const doctorTypes = [
   { id: 1, name: "All Doctors" },
@@ -89,6 +86,14 @@ const doctors = [
 ];
 
 export default function page() {
+  const { homeFaq, loading, fetchHomePageFaq } = useFaqContext();
+
+  const { page, page_content } = homeFaq?.data || {};
+
+  useEffect(() => {
+    fetchHomePageFaq();
+  }, []);
+
   return (
     <>
       <HeroSection />
@@ -99,7 +104,7 @@ export default function page() {
       <OurPatientsReviews />
       <AppointmentBooking />
       <OurBlog />
-      <FAQ faqs={faqs} faqPageTitle={faqPageTitle} />
+      <FAQ faqs={page_content} faqPageTitle={page} />
     </>
   );
 }

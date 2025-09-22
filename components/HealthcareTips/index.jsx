@@ -2,6 +2,7 @@
 import React from "react";
 import BlogCard from "../../ui/BlogCard";
 import PageTitle from "../../ui/PageTitle";
+import { useRouter } from "next/navigation";
 
 const tips = [
   {
@@ -57,6 +58,14 @@ const tips = [
 ];
 
 export default function PreventiveHealthTips() {
+  const router = useRouter();
+
+  const handleReadMore = () => {
+    router.push(
+      `blog-health-library/${"breakthrough-in-quantum-computing-computing-power-reaches-milestone"}`
+    );
+  };
+
   return (
     <div className="py-14 bg-white">
       <section className="hero-main-container">
@@ -69,7 +78,7 @@ export default function PreventiveHealthTips() {
         <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center"></h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {tips.map((tips) => (
-            <BlogCard key={tips.id} {...tips} />
+            <BlogCard key={tips.id} {...tips} handleReadMore={handleReadMore} />
           ))}
         </div>
       </section>

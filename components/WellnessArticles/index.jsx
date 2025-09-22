@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import BlogCard from "../../ui/BlogCard";
 import PageTitle from "../../ui/PageTitle";
-import Pagination from "../../ui/Pagination"; // 👈 import pagination
+import Pagination from "../../ui/Pagination";
+import { useRouter } from "next/navigation";
 
 const articles = [
   {
@@ -109,6 +110,7 @@ const articles = [
 
 export default function WellnessArticles() {
   const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
   const itemsPerPage = 6;
 
   // Pagination Logic
@@ -116,6 +118,11 @@ export default function WellnessArticles() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = articles.slice(startIndex, startIndex + itemsPerPage);
 
+  const handleReadMore = () => {
+    router.push(
+      `blog-health-library/${"breakthrough-in-quantum-computing-computing-power-reaches-milestone"}`
+    );
+  };
   return (
     <div className="py-14 bg-color-wrapper">
       <section className="hero-main-container">
@@ -128,7 +135,11 @@ export default function WellnessArticles() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {currentItems.map((article) => (
-            <BlogCard key={article.id} {...article} />
+            <BlogCard
+              key={article.id}
+              {...article}
+              handleReadMore={handleReadMore}
+            />
           ))}
         </div>
 

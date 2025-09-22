@@ -1,8 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useFooterList } from "../../context/FooterContext";
+import Loader from "../../ui/Loader/Loader";
 
 const menuItems = [
   { label: "Home", href: "/" },
@@ -44,79 +46,90 @@ export const socialLinks = [
 
 export default function Footer() {
   const [email, setEmail] = useState("");
-
+  const { footerItemsList, loading, fetchFooterListItems } = useFooterList();
+  const { logo, site_description, copyright, social_icons } =
+    footerItemsList?.data || {};
+  const { main_menu } = footerItemsList;
+  const { button, description, label, heading } =
+    footerItemsList?.subscription || {};
+  const footerBarItemList =
+    (main_menu && main_menu.length > 0 && main_menu[0].items) || [];
+  const mentTitle =
+    (main_menu && main_menu.length > 0 && main_menu[0].name) || [];
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Subscribed with:", email);
   };
+
+  useEffect(() => {
+    fetchFooterListItems();
+  }, []);
+
+  if (loading) {
+    return <Loader size={12} />;
+  }
 
   return (
     <div className="footer-parent-wrapper pt-16">
       <div className="hero-main-container ">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6  ">
           <div>
-            <Image
-              src={"/images/flogo.png"}
-              alt="logo"
-              height={134}
-              width={285}
-              className="object-contain"
-            />
-            <p className="mt-6 footer-desc-title">
-              Ckosmic Health delivers advanced and compassionate healthcare
-              powered by innovation and expertise. Our mission is to inspire
-              healthier lives worldwide.
-            </p>
+            {logo && (
+              <Image
+                src={logo}
+                alt="logo"
+                height={134}
+                width={285}
+                className="object-contain"
+              />
+            )}
+
+            <p className="mt-6 footer-desc-title">{site_description}</p>
             <p className="mt-8 mb-3 footer-social-title">Follow us</p>
             <div className="flex gap-5">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.id}
+              {social_icons?.map((link) => (
+                <Link
+                  key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className=" border border-white p-4"
+                  className="border border-white p-3"
                 >
                   <Image
-                    src={link.icon}
+                    src={link.image}
                     alt={link.name}
-                    className=""
+                    className="object-contain"
                     height={20}
                     width={20}
                   />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
           <div className="flex  items-start md:items-center lg:items-center flex-col">
             <ul>
-              <p className="mt-8 mb-3 footer-title">Main pages</p>
-              {menuItems.map((item) => (
+              <p className="mt-8 mb-3 footer-title">{mentTitle}</p>
+              {footerBarItemList?.map((item) => (
                 <Link
-                  key={item.href}
-                  href={item.href}
+                  key={item.url}
+                  href={item.url}
                   className="flex flex-row gap-5 mb-3"
                 >
-                  <li className="footer-links mb-0"> {item.label}</li>
+                  <li className="footer-links mb-0"> {item.title}</li>
                 </Link>
               ))}
             </ul>
           </div>
           <div>
-            <p className="lg:mt-8 mb-3 footer-title ">
-              Subscribe to our newsletter
-            </p>
-            <p className="mt-6 footer-desc-title">
-              Lorem ipsum dolor sit amet consectetur odio vel nunc platea orci
-              quis dolor ac aliquet in sit viverra et.
-            </p>
+            <p className="lg:mt-8 mb-3 footer-title ">{heading}</p>
+            <p className="mt-6 footer-desc-title">{description}</p>
             <form
               onSubmit={handleSubmit}
               className="flex flex-col sm:flex-col lg:flex-col md:items-start gap-4 lg:items-start mt-8"
             >
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={label}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full  px-6 py-3 rounded-full border border-gray-300 focus:outline-none bg-white text-gray-600 "
@@ -126,13 +139,13 @@ export default function Footer() {
                 type="submit"
                 className="subScribe-btn px-6 py-3 justify-center rounded-full border border-white  text-white font-medium flex md:items-start items-center gap-2  hover:cursor-pointer footer-desc-title"
               >
-                Subscribe <span>→</span>
+                {button} <span>→</span>
               </button>
             </form>
           </div>
         </div>
         <span className="flex justify-center md:justify-center lg:justify-end  py-5 text-white">
-          Copyright ©Ckosmin Health City
+          {copyright}
         </span>
       </div>
     </div>

@@ -1,8 +1,8 @@
 "use client";
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 import api from "../lib/axios";
 
-const DataContext = createContext(undefined);
+const DataContext = createContext(null);
 
 export function HeaderContext({ children }) {
   const [menuItemsList, setMenuItems] = useState([]);
@@ -10,14 +10,10 @@ export function HeaderContext({ children }) {
 
   const fetchMenuListItems = async () => {
     setLoading(true);
-    const res = await api.get("/posts");
+    const res = await api.get("/menus");
     setMenuItems(res.data);
     setLoading(false);
   };
-
-  // useEffect(() => {
-  //   fetchMenuListItems();
-  // }, []);
 
   return (
     <DataContext.Provider

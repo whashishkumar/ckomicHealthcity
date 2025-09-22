@@ -1,8 +1,5 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import { Providers } from "../context/providers";
 
 export const metadata = {
   title: "ckosmichealth",
@@ -53,18 +50,14 @@ const plusJakartaSans = localFont({
   variable: "--font-plusJakartaSans",
 });
 
-export default function RootLayout({ children }) {
+export default function SubRootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={` ${plusJakartaSans.variable}${poppins.variable} ${inter.variable} ${instrument.variable}antialiased`}
+        className={` ${plusJakartaSans.variable}${poppins.variable} ${inter.variable} ${instrument.variable}`}
       >
         <>
-          <Providers>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </Providers>
+          <main>{children}</main>
         </>
       </body>
     </html>

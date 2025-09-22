@@ -4,7 +4,14 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function BlogCard({ id, title, summary, image, date }) {
+export default function BlogCard({
+  id,
+  title,
+  summary,
+  image,
+  date,
+  handleReadMore,
+}) {
   return (
     <>
       <article className="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col">
@@ -21,12 +28,12 @@ export default function BlogCard({ id, title, summary, image, date }) {
           <div className="flex flex-col mt-4 gap-5 secondary-font">
             <span className="text-xs text-gray-500">{date}</span>
             <div>
-              <Link
-                href={`/blogs/${id}`}
+              <button
+                onClick={handleReadMore}
                 className="px-4 py-2  rounded-lg read-more-btn primary-font"
               >
-                Read More
-              </Link>
+                Read more <span className="text-xl">»</span>
+              </button>
             </div>
           </div>
         </div>

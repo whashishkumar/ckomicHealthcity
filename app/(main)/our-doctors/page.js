@@ -1,6 +1,6 @@
 import React from "react";
-import OurDoctors from "../../components/OurDoctors";
-import Reviews from "../../components/Reviews";
+import Reviews from "../../../components/Reviews";
+import OurDoctors from "../../../components/OurDoctors";
 
 const doctorTypes = [
   { id: 1, name: "All Doctors" },

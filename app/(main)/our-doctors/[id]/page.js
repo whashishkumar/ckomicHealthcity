@@ -1,11 +1,11 @@
 import React from "react";
-import AboutSurgeon from "../../../components/AboutSurgeon";
-import Location from "../../../components/Location";
-import Banner from "../../../components/Banner";
-import AppointmentBooking from "../../../components/BookAppointment";
-import AboutFaq from "../../../components/AboutFAQ";
-import TopCitiesSurgeon from "../../../components/TopCitiesSurgeon";
-import Reviews from "../../../components/Reviews";
+import AboutSurgeon from "../../../../components/AboutSurgeon";
+import Location from "../../../../components/Location";
+import Banner from "../../../../components/Banner";
+import AppointmentBooking from "../../../../components/BookAppointment";
+import AboutFaq from "../../../../components/AboutFAQ";
+import TopCitiesSurgeon from "../../../../components/TopCitiesSurgeon";
+import Reviews from "../../../../components/Reviews";
 
 const contactBanners = [
   {

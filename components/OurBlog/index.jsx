@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import "./style.css";
 import PageTitle from "../../ui/PageTitle";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const cardData = [
   {
@@ -50,6 +52,13 @@ const cardDataTwo = [
 ];
 
 export default function OurBlog() {
+  const router = useRouter();
+  const handleReadMore = () => {
+    router.push(
+      `blog-health-library/${"breakthrough-in-quantum-computing-computing-power-reaches-milestone"}`
+    );
+  };
+
   return (
     <div className="our-blog-wrapper">
       <div className="hero-main-container">
@@ -95,12 +104,12 @@ export default function OurBlog() {
                       <p className="leading-relaxed">{card.description}</p>
                     </div>
 
-                    <a
-                      href={card.link}
-                      className="font-medium hover:underline flex items-center gap-2"
+                    <button
+                      onClick={() => handleReadMore()}
+                      className="font-medium cursor-pointer  flex items-center gap-2"
                     >
                       Read more <span className="text-xl">»</span>
-                    </a>
+                    </button>
                   </div>
                 </div>
               ))}
@@ -135,12 +144,12 @@ export default function OurBlog() {
                   <p className="leading-relaxed mb-6 primary-font flex-1">
                     {card.description}
                   </p>
-                  <a
-                    href={card.link}
-                    className="font-medium hover:underline flex items-center justify-end gap-2 primary-font"
+                  <button
+                    onClick={() => handleReadMore()}
+                    className="font-medium cursor-pointer flex items-center gap-2"
                   >
                     Read more <span className="text-xl">»</span>
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}

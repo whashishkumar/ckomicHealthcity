@@ -4,6 +4,7 @@ import React from "react";
 import BlogCard from "../../ui/BlogCard";
 import PageTitle from "../../ui/PageTitle";
 import SwipeSlider from "../../ui/SwipeSlider";
+import { useRouter } from "next/navigation";
 
 const newsList = [
   {
@@ -59,6 +60,13 @@ const newsList = [
 ];
 
 export default function HospitalNews() {
+  const router = useRouter();
+  const handleReadMore = () => {
+    router.push(
+      `blog-health-library/${"breakthrough-in-quantum-computing-computing-power-reaches-milestone"}`
+    );
+  };
+
   return (
     <div className="py-14 bg-white ">
       <section className="hero-main-container">
@@ -71,7 +79,11 @@ export default function HospitalNews() {
             spaceBetween={20}
           >
             {newsList.map((news) => (
-              <BlogCard key={news.id} {...news} />
+              <BlogCard
+                key={news.id}
+                {...news}
+                handleReadMore={handleReadMore}
+              />
             ))}
           </SwipeSlider>
         </div>
