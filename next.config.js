@@ -6,10 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "ckosmic.whdev.in",
         port: "",
-        pathname: "/**", // allow all images under /storage
+        pathname: "/**",
       },
     ],
-    unoptimized: false,
+    unoptimized: true,
   },
   env: {
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
