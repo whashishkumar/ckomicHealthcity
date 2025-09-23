@@ -47,7 +47,7 @@ export default function OurPatientsReviews() {
           headingClass="review-title-heading w-full md:w-full lg:w-[35%] mt-4"
           wrapperClass="mx-auto"
         />
-        <div className="testimonials-reviews mt-5 grid grid-cols-1 md:grid-cols-[30%_60%] lg:grid-cols-[30%_60%] gap-10">
+        <div className="testimonials-reviews mt-5 grid grid-cols-1 lg:grid-cols-[30%_60%] gap-10">
           <div className="review-img-container">
             <Image
               src="/images/about02.jpg"

@@ -93,7 +93,7 @@ export default function Footer() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-white p-3"
+                  className="border border-white p-3 rounded-full h-[50px] w-[50px] flex justify-center"
                 >
                   <Image
                     src={link.image}
@@ -132,19 +132,19 @@ export default function Footer() {
                 placeholder={label}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full  px-6 py-3 rounded-full border border-gray-300 focus:outline-none bg-white text-gray-600 "
+                className="w-full lg:h-[50px] px-6 py-3 rounded-full  font-medium  border border-gray-300 focus:outline-none bg-white text-gray-600 "
                 required
               />
               <button
                 type="submit"
-                className="subScribe-btn px-6 py-3 justify-center rounded-full border border-white  text-white font-medium flex md:items-start items-center gap-2  hover:cursor-pointer footer-desc-title"
+                className="leading-none subScribe-btn lg:h-[50px] px-6 py-3 justify-center rounded-full border border-white  text-white font-medium flex  items-center gap-2  hover:cursor-pointer footer-desc-title"
               >
                 {button} <span>→</span>
               </button>
             </form>
           </div>
         </div>
-        <span className="flex justify-center md:justify-center lg:justify-end  py-5 text-white">
+        <span className="leading-none flex justify-center md:justify-center lg:justify-end  py-5 text-white">
           {copyright}
         </span>
       </div>

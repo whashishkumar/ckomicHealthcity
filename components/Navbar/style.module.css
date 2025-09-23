@@ -47,6 +47,7 @@
   font-family: var(--font-poppins);
   font-weight: 400;
   line-height: 100%;
+  cursor: pointer;
 }
 
 .navLink:hover {
@@ -117,6 +118,56 @@
   display: flex;
 }
 
+.navItem {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 220px;
+  padding: 10px 0;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  z-index: 50;
+}
+
+.navItem:hover .dropdownMenu {
+  display: flex;
+  cursor: pointer;
+}
+
+.dropdownLink {
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: var(--color-green);
+  text-decoration: none;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  line-height: 100%;
+  cursor: pointer;
+}
+
+.dropdownLink:hover {
+  background: #f5f5f5;
+}
+
+.cursor-default {
+  cursor: pointer;
+}
+
+.activeNavLink {
+  color: var(--color-green);
+  font-weight: 550;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-green);
+}
+
+
 @media (max-width: 1024px) {
   .desktopNav {
     display: none;
@@ -146,7 +197,7 @@
 }
 
 @media (max-width: 640px) {
-  .toolTip {
+  .tip {
     display: none;
   }
 

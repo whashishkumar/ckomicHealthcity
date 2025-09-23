@@ -17,19 +17,20 @@ export default function OurDoctors({ doctors, doctorTypes }) {
           wrapperClass="max-w-3xl mx-auto text-left "
         />
         <div className="flex items-center gap-3 md:gap-3 lg:gap-3 flex-wrap">
-          {doctorTypes.map((doctor) => (
-            <button
-              key={doctor.id}
-              onClick={() => setActiveDoctor(doctor.name)}
-              className={` capitalize  ${
-                activeDoctor === doctor.name
-                  ? "type-btn active-btn "
-                  : "type-btn"
-              }`}
-            >
-              {doctor.name}
-            </button>
-          ))}
+          {doctorTypes &&
+            doctorTypes.map((doctor) => (
+              <button
+                key={doctor.id}
+                onClick={() => setActiveDoctor(doctor.name)}
+                className={` capitalize  ${
+                  activeDoctor === doctor.name
+                    ? "type-btn active-btn "
+                    : "type-btn"
+                }`}
+              >
+                {doctor.name}
+              </button>
+            ))}
         </div>
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 w-full pb-16">

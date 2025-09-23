@@ -68,7 +68,10 @@ export default function Specialties() {
                 />
                 <h3 className="our-specialities-title">{item.title}</h3>
                 <p className="our-specialities-desc">{item.description}</p>
-                <a href="#" className="mt-2 our-specialities-readMore">
+                <a
+                  href={`/our-specialities/${item.title.toLocaleLowerCase()}`}
+                  className="mt-2 our-specialities-readMore"
+                >
                   Read More →
                 </a>
               </div>

@@ -99,7 +99,11 @@ export default function PatientServices() {
                   height={25}
                 /> */}
 
-                <Link href="/services/laboratory" className="read-more ">
+                <Link
+                  href={"#"}
+                  // href={`patient-services${service.title.toLocaleLowerCase()}`}
+                  className="read-more "
+                >
                   Read more <FaArrowRight className="btn-icon-arrow" />
                 </Link>
 

@@ -7,6 +7,7 @@ import ToolTip from "../ToolTip";
 import { useMenuList } from "../../context/HeaderContext";
 import Image from "next/image";
 import Loader from "../../ui/Loader/Loader";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
   { label: "Home", href: "/" },
@@ -19,7 +20,55 @@ const menuItems = [
   { label: "Contact Us", href: "/contact-us" },
 ];
 
+const ourSpeclities = [
+  {
+    title: "Cardiology",
+    url: "/our-specialities/cardiology",
+  },
+  {
+    title: "Pediatrics",
+    url: "/our-specialities/pediatrics",
+  },
+  {
+    title: "Orthopedics",
+    url: "/our-specialities/orthopedics",
+  },
+  {
+    title: "Neurology",
+    url: "/our-specialities/neurology",
+  },
+  {
+    title: "Gynecology",
+    url: "/our-specialities/gynecology",
+  },
+  {
+    title: "Ophthalmology",
+    url: "/our-specialities/ophthalmology",
+  },
+];
+
+const patientServices = [
+  {
+    title: "Laboratory Services",
+    url: "/patient-services/laboratory-services",
+  },
+  {
+    title: "Radiology & Imaging",
+    url: "/patient-services/radiology",
+  },
+  {
+    title: "Pharmacy Services",
+    url: "/patient-services/pharmacy-services",
+  },
+  {
+    title: "Emergency Care",
+    url: "/patient-services/emergency-care",
+  },
+];
+
 export default function Navbar() {
+  const pathname = usePathname();
+  const [openDropdown, setOpenDropdown] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const { menuItemsList, fetchMenuListItems, loading } = useMenuList();
   const [showTip, setShowTip] = useState(true);
@@ -46,6 +95,11 @@ export default function Navbar() {
   const baseUrl = process.env.NEXT_PUBLIC_IMAGE_URL;
   const aptIcon = `${baseUrl}${book_appointment?.icon}`;
 
+  const handleMobileMenu = () => {
+    setMenuOpen(false);
+    setOpenDropdown("");
+  };
+
   if (loading || !menuItemsList) {
     return <Loader size={12} />;
   }
@@ -59,21 +113,85 @@ export default function Navbar() {
           </div>
         )}
         <header className={`${styles.header} container`}>
-          <div className={`sub-container ${styles.headerContainer}  `}>
+          <div className={`sub-container ${styles.headerContainer}`}>
             <div className={styles.logo}>
               <img src={logo} alt="Logo" className={styles.logoImg} />
             </div>
             <nav className={`${styles.nav} ${styles.desktopNav}`}>
-              {navBarItemList?.map((item) => (
-                <Link key={item.url} href={item.url} className={styles.navLink}>
-                  {item.title}
-                </Link>
-              ))}
+              {navBarItemList?.map((item) => {
+                const isActive = pathname === item.url;
+                return (
+                  <div key={item.url} className={styles.navItem}>
+                    {["Our Specialities", "Patient Services"].includes(
+                      item.title
+                    ) ? (
+                      <span
+                        className={`${styles.navLink} ${
+                          isActive ? styles.activeNavLink : ""
+                        } cursor-default`}
+                      >
+                        {item.title}
+                      </span>
+                    ) : (
+                      <Link
+                        href={item.url}
+                        className={`${styles.navLink} ${
+                          isActive ? styles.activeNavLink : ""
+                        }`}
+                      >
+                        {item.title}
+                      </Link>
+                    )}
+
+                    {item.title === "Our Specialities" && (
+                      <div className={styles.dropdownMenu}>
+                        {ourSpeclities?.map((subItem) => {
+                          const subActive = pathname === subItem.url;
+                          return (
+                            <Link
+                              key={subItem.url}
+                              href={subItem.url}
+                              className={`${styles.dropdownLink}  ${
+                                subActive ? styles.activeNavLink : ""
+                              }`}
+                            >
+                              {subItem.title}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
+
+                    {/* Dropdown - Patient Services */}
+                    {item.title === "Patient Services" && (
+                      <div className={styles.dropdownMenu}>
+                        {patientServices?.map((subItem) => {
+                          const subActive = pathname === subItem.url;
+                          return (
+                            <Link
+                              key={subItem.url}
+                              href={subItem.url}
+                              className={`${styles.dropdownLink} ${
+                                subActive ? styles.activeNavLink : ""
+                              }`}
+                            >
+                              {subItem.title}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </nav>
 
+            {/* Book Appointment CTA */}
             <Link
               href="/appointment"
-              className={`${styles.ctaBtn} ${styles.desktopNav}`}
+              className={`${styles.ctaBtn} ${styles.desktopNav} ${
+                pathname === "/appointment" ? styles.activeNavLink : ""
+              }`}
             >
               {book_appointment && (
                 <Image
@@ -84,10 +202,10 @@ export default function Navbar() {
                   className="mr-2 object-contain"
                 />
               )}
-
               {book_appointment?.heading}
             </Link>
 
+            {/* Mobile Hamburger */}
             <button
               className={styles.hamburger}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -114,20 +232,98 @@ export default function Navbar() {
           {menuOpen && (
             <div className={styles.mobileMenu}>
               <nav className={styles.mobileNav}>
-                {navBarItemList?.map((item) => (
-                  <Link
-                    key={item.url}
-                    href={item.url}
-                    className={styles.mobileNavLink}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {item.title}
-                  </Link>
-                ))}
+                {navBarItemList?.map((item) => {
+                  const isActive = pathname === item.url;
+                  const hasDropdown = [
+                    "Our Specialities",
+                    "Patient Services",
+                  ].includes(item.title);
+                  return (
+                    <div key={item.url}>
+                      {hasDropdown ? (
+                        <span
+                          className={`${styles.mobileNavLink} ${
+                            isActive ? styles.activeNavLink : ""
+                          } cursor-pointer`}
+                          onClick={() => {
+                            if (item.title === "Our Specialities") {
+                              setOpenDropdown((prev) =>
+                                prev === "specialities" ? "" : "specialities"
+                              );
+                            } else if (item.title === "Patient Services") {
+                              setOpenDropdown((prev) =>
+                                prev === "services" ? "" : "services"
+                              );
+                            }
+                          }}
+                        >
+                          {item.title}
+                        </span>
+                      ) : (
+                        <Link
+                          href={item.url}
+                          className={`${styles.mobileNavLink} ${
+                            isActive ? styles.activeNavLink : ""
+                          }`}
+                          onClick={handleMobileMenu}
+                        >
+                          {item.title}
+                        </Link>
+                      )}
+
+                      {/* Mobile Dropdown */}
+                      {item.title === "Our Specialities" &&
+                        openDropdown === "specialities" && (
+                          <div className={styles.mobileDropdown}>
+                            {ourSpeclities.map((subItem) => {
+                              const subActive = pathname === subItem.url;
+                              return (
+                                <Link
+                                  key={subItem.url}
+                                  href={subItem.url}
+                                  className={`${styles.dropdownLink} ${
+                                    subActive ? styles.activeNavLink : ""
+                                  }`}
+                                  onClick={handleMobileMenu}
+                                >
+                                  {subItem.title}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        )}
+
+                      {item.title === "Patient Services" &&
+                        openDropdown === "services" && (
+                          <div className={styles.mobileDropdown}>
+                            {patientServices.map((subItem) => {
+                              const subActive = pathname === subItem.url;
+                              return (
+                                <Link
+                                  key={subItem.url}
+                                  href={subItem.url}
+                                  className={`${styles.dropdownLink} ${
+                                    subActive ? styles.activeNavLink : ""
+                                  }`}
+                                  onClick={handleMobileMenu}
+                                >
+                                  {subItem.title}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        )}
+                    </div>
+                  );
+                })}
+
+                {/* Mobile Book Appointment */}
                 <Link
                   href="/appointment"
-                  className={`${styles.ctaBtn} block text-center mt-4`}
-                  onClick={() => setMenuOpen(false)}
+                  className={`${styles.ctaBtn} block text-center mt-4 ${
+                    pathname === "/appointment" ? styles.activeNavLink : ""
+                  }`}
+                  onClick={handleMobileMenu}
                 >
                   Book Appointment
                 </Link>
