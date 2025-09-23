@@ -9,7 +9,7 @@ const nextConfig = {
         pathname: "/storage/**", // allow all images under /storage
       },
     ],
-    unoptimized: process.env.NEXT_PUBLIC_IMAGE_URL === "true",
+    unoptimized: process.env.NEXT_PUBLIC_IMAGE_URL === "false",
   },
   env: {
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
